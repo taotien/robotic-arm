@@ -30,6 +30,7 @@
             xorg.libXrandr
             xorg.libXi
             xorg.libX11
+            wayland
           ];
           LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
         };
