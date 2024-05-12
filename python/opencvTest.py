@@ -8,12 +8,12 @@ cap = cv.VideoCapture(0)
 # take first frame of the video
 ret,frame = cap.read()
 # setup initial location of window
-x, y, w, h = 300, 200, 100, 50 # simply hardcoded the values
+x, y, w, h = 300, 230, 100, 100 # simply hardcoded the values
 track_window = (x, y, w, h)
 # set up the ROI for tracking
 roi = frame[y:y+h, x:x+w]
 hsv_roi = cv.cvtColor(roi, cv.COLOR_BGR2HSV)
-mask = cv.inRange(hsv_roi, np.array((0., 60.,32.)), np.array((180.,255.,255.)))
+mask = cv.inRange(hsv_roi, np.array((0., 60.,32.)), np.array((180.,200.,200.)))
 roi_hist = cv.calcHist([hsv_roi],[0],mask,[180],[0,180])
 cv.normalize(roi_hist,roi_hist,0,255,cv.NORM_MINMAX)
 # Setup the termination criteria, either 10 iteration or move by at least 1 pt
